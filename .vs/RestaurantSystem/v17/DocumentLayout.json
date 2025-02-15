@@ -1,0 +1,828 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\admin\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\admin\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:controllers\\staffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\admin\\staff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\admin\\staff.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\models\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:models\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:models\\staff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\shared\\_currentorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\shared\\_currentorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\orders\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\orders\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\staff\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\staff\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\migrations\\20241225184144_updatestafftable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:migrations\\20241225184144_updatestafftable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\admin\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\admin\\admindashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\orders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\orders\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\feedback\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\feedback\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:models\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\controllers\\feedbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:controllers\\feedbackcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\reservations\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\reservations\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\user\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\user\\orders.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\reservations\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\reservations\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\user\\reservations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\user\\reservations.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\user\\userdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\user\\userdashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:controllers\\reservationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:models\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:models\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\reservations\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\reservations\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\orders\\_currentorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\orders\\_currentorder.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\migrations\\20241222181425_addorderandmenutables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:migrations\\20241222181425_addorderandmenutables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\enums\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:enums\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\restaurantsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:restaurantsystem.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\reservations\\confirmreservation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\reservations\\confirmreservation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\account\\welcome.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\account\\welcome.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\migrations\\20241220052020_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:migrations\\20241220052020_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:models\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\migrations\\20241220052301_seedusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:migrations\\20241220052301_seedusers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\migrations\\20241222211459_updatemenuitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:migrations\\20241222211459_updatemenuitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|c:\\users\\vo gia huy\\downloads\\restaurantsystem\\migrations\\20241225145328_addstafftable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C2566C5-6586-4BFB-B6F9-DD8CF3021C21}|RestaurantSystem.csproj|solutionrelative:migrations\\20241225145328_addstafftable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Staff.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Admin\\Staff.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Staff.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Admin\\Staff.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Staff.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-25T14:27:01.35Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MenuItem.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\MenuItem.cs",
+              "RelativeDocumentMoniker": "Models\\MenuItem.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\MenuItem.cs",
+              "RelativeToolTip": "Models\\MenuItem.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBwAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T16:52:09.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Menu.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Admin\\Menu.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Menu.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Admin\\Menu.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Menu.cshtml",
+              "ViewState": "AgIAABgBAAAAAAAAAAAawEgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-24T19:41:15.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAwwMsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T06:06:21.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StaffController.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\StaffController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StaffController.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\StaffController.cs",
+              "RelativeToolTip": "Controllers\\StaffController.cs",
+              "ViewState": "AgIAAKoAAAAAAAAAAAA0wMoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T14:02:44.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-20T05:17:32.235Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Staff.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\Staff.cs",
+              "RelativeDocumentMoniker": "Models\\Staff.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\Staff.cs",
+              "RelativeToolTip": "Models\\Staff.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA1wBsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T14:00:17.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T13:47:35.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T15:50:10.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_CurrentOrder.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Shared\\_CurrentOrder.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_CurrentOrder.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Shared\\_CurrentOrder.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_CurrentOrder.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-23T09:03:37.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Payment.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Orders\\Payment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Orders\\Payment.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Orders\\Payment.cshtml",
+              "RelativeToolTip": "Views\\Orders\\Payment.cshtml",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAIwH8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-22T22:02:28.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Staff\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Staff\\Index.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Staff\\Index.cshtml",
+              "RelativeToolTip": "Views\\Staff\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-25T14:04:37.622Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAAAGQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T05:18:40.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20241225184144_UpdateStaffTable.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Migrations\\20241225184144_UpdateStaffTable.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241225184144_UpdateStaffTable.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Migrations\\20241225184144_UpdateStaffTable.cs",
+              "RelativeToolTip": "Migrations\\20241225184144_UpdateStaffTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T18:41:44.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAuwGAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-22T21:11:00.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "20241225145328_AddStaffTable.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Migrations\\20241225145328_AddStaffTable.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241225145328_AddStaffTable.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Migrations\\20241225145328_AddStaffTable.cs",
+              "RelativeToolTip": "Migrations\\20241225145328_AddStaffTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T14:53:32.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAiwCUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T05:13:53.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AdminDashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Admin\\AdminDashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\AdminDashboard.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Admin\\AdminDashboard.cshtml",
+              "RelativeToolTip": "Views\\Admin\\AdminDashboard.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAAAIwCcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T06:13:19.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Orders\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Orders\\Index.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Orders\\Index.cshtml",
+              "RelativeToolTip": "Views\\Orders\\Index.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAD4v0YAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-22T18:22:17.612Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrdersController.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAOcAAAAAAAAAAADwv/UAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T16:58:30.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Models\\Order.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\Order.cs",
+              "RelativeToolTip": "Models\\Order.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAYwCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T16:55:44.041Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BaseController.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "Controllers\\BaseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-21T13:18:24.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T06:04:03.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Feedback.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\Feedback.cs",
+              "RelativeDocumentMoniker": "Models\\Feedback.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\Feedback.cs",
+              "RelativeToolTip": "Models\\Feedback.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAQwEcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T14:22:07.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Feedback\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Feedback\\Create.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Feedback\\Create.cshtml",
+              "RelativeToolTip": "Views\\Feedback\\Create.cshtml",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAIwKoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-24T14:26:51.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "FeedbackController.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\FeedbackController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FeedbackController.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\FeedbackController.cs",
+              "RelativeToolTip": "Controllers\\FeedbackController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAIwEgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T14:24:49.569Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Reservations\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservations\\Details.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Reservations\\Details.cshtml",
+              "RelativeToolTip": "Views\\Reservations\\Details.cshtml",
+              "ViewState": "AgIAADIAAAAAAAAAAAAkwEsAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T14:47:26.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Orders.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\User\\Orders.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\Orders.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\User\\Orders.cshtml",
+              "RelativeToolTip": "Views\\User\\Orders.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T14:06:17.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Reservations\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservations\\Create.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Reservations\\Create.cshtml",
+              "RelativeToolTip": "Views\\Reservations\\Create.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T14:46:40.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UserDashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\User\\UserDashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\UserDashboard.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\User\\UserDashboard.cshtml",
+              "RelativeToolTip": "Views\\User\\UserDashboard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T06:14:54.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Reservations.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\User\\Reservations.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\Reservations.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\User\\Reservations.cshtml",
+              "RelativeToolTip": "Views\\User\\Reservations.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T14:05:35.89Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ReservationsController.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\ReservationsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ReservationsController.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\ReservationsController.cs",
+              "RelativeToolTip": "Controllers\\ReservationsController.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAswFUBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:43:41.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\Reservation.cs",
+              "RelativeDocumentMoniker": "Models\\Reservation.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\Reservation.cs",
+              "RelativeToolTip": "Models\\Reservation.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAA/wEcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T14:36:54.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAIwJYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T05:28:27.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\RegisterViewModel.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\RegisterViewModel.cs",
+              "RelativeToolTip": "Models\\RegisterViewModel.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T04:24:03.912Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Reservations\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservations\\Index.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Reservations\\Index.cshtml",
+              "RelativeToolTip": "Views\\Reservations\\Index.cshtml",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAQwH4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T14:46:04.674Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "_CurrentOrder.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Orders\\_CurrentOrder.cshtml",
+              "RelativeDocumentMoniker": "Views\\Orders\\_CurrentOrder.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Orders\\_CurrentOrder.cshtml",
+              "RelativeToolTip": "Views\\Orders\\_CurrentOrder.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAEcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-22T21:22:24.454Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwCUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T16:27:56.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T05:07:14.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "Models\\OrderItem.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\OrderItem.cs",
+              "RelativeToolTip": "Models\\OrderItem.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwCAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T17:53:57.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "20241222211459_UpdateMenuItems.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Migrations\\20241222211459_UpdateMenuItems.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241222211459_UpdateMenuItems.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Migrations\\20241222211459_UpdateMenuItems.cs",
+              "RelativeToolTip": "Migrations\\20241222211459_UpdateMenuItems.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T21:15:01.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "20241222181425_AddOrderAndMenuTables.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Migrations\\20241222181425_AddOrderAndMenuTables.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241222181425_AddOrderAndMenuTables.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Migrations\\20241222181425_AddOrderAndMenuTables.cs",
+              "RelativeToolTip": "Migrations\\20241222181425_AddOrderAndMenuTables.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T18:14:26.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "OrderStatus.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Enums\\OrderStatus.cs",
+              "RelativeDocumentMoniker": "Enums\\OrderStatus.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Enums\\OrderStatus.cs",
+              "RelativeToolTip": "Enums\\OrderStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-22T17:16:00.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "RestaurantSystem.csproj",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\RestaurantSystem.csproj",
+              "RelativeDocumentMoniker": "RestaurantSystem.csproj",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\RestaurantSystem.csproj",
+              "RelativeToolTip": "RestaurantSystem.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-22T17:11:09.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "ConfirmReservation.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Reservations\\ConfirmReservation.cshtml",
+              "RelativeDocumentMoniker": "Views\\Reservations\\ConfirmReservation.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Reservations\\ConfirmReservation.cshtml",
+              "RelativeToolTip": "Views\\Reservations\\ConfirmReservation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T16:21:08.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Welcome.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Account\\Welcome.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Welcome.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Account\\Welcome.cshtml",
+              "RelativeToolTip": "Views\\Account\\Welcome.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T05:31:56.529Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAIwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-20T05:33:26.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "20241220052301_SeedUsers.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Migrations\\20241220052301_SeedUsers.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241220052301_SeedUsers.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Migrations\\20241220052301_SeedUsers.cs",
+              "RelativeToolTip": "Migrations\\20241220052301_SeedUsers.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T05:23:02.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "20241220052020_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Migrations\\20241220052020_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241220052020_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Migrations\\20241220052020_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20241220052020_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T05:20:21.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\LoginViewModel.cs",
+              "ToolTip": "C:\\Users\\VO GIA HUY\\Downloads\\RestaurantSystem\\Models\\LoginViewModel.cs",
+              "RelativeToolTip": "Models\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-20T05:08:28.007Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

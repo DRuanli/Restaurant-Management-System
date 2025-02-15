@@ -1,0 +1,97 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.menu-item .card {
+    transition: transform 0.2s;
+}
+
+    .menu-item .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+.btn-group {
+    flex-wrap: wrap;
+}
+
+.tab-content {
+    padding: 20px 0;
+}
+
+/* Payment method styling */
+.payment-option {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+    .payment-option:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .payment-option.selected {
+        border-color: #0d6efd;
+        border-width: 2px;
+    }
+
+/* QR code placeholder */
+.qr-code-placeholder {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Payment form animations */
+.payment-form {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    height: 100%;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text {
+    flex-grow: 1;
+}

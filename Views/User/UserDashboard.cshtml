@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "User Dashboard";
+    ViewBag.Role = "user";
+}
+
+<div class="container">
+    <h1>Welcome to the User Dashboard</h1>
+    <p>Manage your reservations and orders from this dashboard.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Reservations</h5>
+                </div>
+                <div class="card-body">
+                    <p>View and manage your restaurant reservations.</p>
+                    <a asp-controller="User" asp-action="Reservations" class="btn btn-primary">View Reservations</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">Orders</h5>
+                </div>
+                <div class="card-body">
+                    <p>View and track your food orders.</p>
+                    <a asp-controller="User" asp-action="Orders" class="btn btn-primary">View Orders</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

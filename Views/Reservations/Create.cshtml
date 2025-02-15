@@ -1,0 +1,203 @@
+﻿@model RestaurantSystem.Models.Reservation
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Create Reservation</h1>
+        @if (ViewBag.Role == "admin")
+        {
+            <a asp-controller="Admin" asp-action="AdminDashboard" class="btn btn-primary">
+                <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
+        }
+        else
+        {
+            <a asp-controller="User" asp-action="UserDashboard" class="btn btn-primary">
+                <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
+        }
+    </div>
+
+    @if (!ViewData.ModelState.IsValid || TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <p>@TempData["ErrorMessage"]</p>
+            }
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <ul>
+                    @foreach (var modelError in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                    {
+                        <li>@modelError.ErrorMessage</li>
+                    }
+                </ul>
+            }
+        </div>
+    }
+
+    <form asp-controller="@(ViewBag.Role == "admin" ? "Reservations" : "User")"
+          asp-action="Create"
+          method="post"
+          id="reservationForm">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group mb-3">
+            <label asp-for="CustomerName" class="control-label">
+                Customer Name
+                <i class="bi bi-question-circle" data-bs-toggle="tooltip" title="Enter your full name"></i>
+            </label>
+            <input asp-for="CustomerName" class="form-control" required />
+            <span asp-validation-for="CustomerName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="PhoneNumber" class="control-label">
+                Phone Number
+                <i class="bi bi-question-circle" data-bs-toggle="tooltip" title="Enter a valid phone number"></i>
+            </label>
+            <input asp-for="PhoneNumber" class="form-control" required />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="Email" class="control-label">
+                Email
+                <i class="bi bi-question-circle" data-bs-toggle="tooltip" title="Enter a valid email address for confirmation"></i>
+            </label>
+            <input asp-for="Email" class="form-control" type="email" required />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="NumberOfGuests" class="control-label">
+                Number of Guests
+                <i class="bi bi-question-circle" data-bs-toggle="tooltip" title="Maximum 20 guests per reservation"></i>
+            </label>
+            <input asp-for="NumberOfGuests" class="form-control" type="number" min="1" max="20" required />
+            <span asp-validation-for="NumberOfGuests" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="ReservationDate" class="control-label">
+                Reservation Date
+                <i class="bi bi-question-circle" data-bs-toggle="tooltip" title="Select a date up to 3 months in advance"></i>
+            </label>
+            <input asp-for="ReservationDate" class="form-control" type="date" required />
+            <span asp-validation-for="ReservationDate" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="ReservationTime" class="control-label">
+                Reservation Time
+                <i class="bi bi-question-circle" data-bs-toggle="tooltip" title="Business hours: 10:00 AM - 10:00 PM"></i>
+            </label>
+            <input asp-for="ReservationTime" class="form-control" type="time" required />
+            <span asp-validation-for="ReservationTime" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="SpecialRequests" class="control-label">
+                Special Requests
+                <i class="bi bi-question-circle" data-bs-toggle="tooltip" title="Any special requirements or preferences"></i>
+            </label>
+            <textarea asp-for="SpecialRequests" class="form-control" rows="3"></textarea>
+            <span asp-validation-for="SpecialRequests" class="text-danger"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <button type="submit" class="btn btn-primary" id="submitButton">
+                <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                Create Reservation
+            </button>
+            @if (ViewBag.Role == "admin")
+            {
+                <a asp-controller="Reservations" asp-action="Index" class="btn btn-secondary">Back to List</a>
+            }
+            else
+            {
+                <a asp-controller="User" asp-action="Reservations" class="btn btn-secondary">Back to List</a>
+            }
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $(document).ready(function () {
+            // Initialize tooltips
+            $('[data-bs-toggle="tooltip"]').tooltip();
+
+            // Set minimum date to today
+            var today = new Date().toISOString().split('T')[0];
+            $('#ReservationDate').attr('min', today);
+
+            // Date validation
+            $('#ReservationDate').change(function () {
+                var selected = new Date($(this).val());
+                var today = new Date();
+                today.setHours(0, 0, 0, 0); // Reset time portion for accurate date comparison
+                var maxDate = new Date();
+                maxDate.setMonth(maxDate.getMonth() + 3); // Allow bookings up to 3 months ahead
+
+                if (selected < today) {
+                    alert('Please select a future date');
+                    $(this).val('');
+                } else if (selected > maxDate) {
+                    alert('Reservations can only be made up to 3 months in advance');
+                    $(this).val('');
+                }
+            });
+
+            // Time validation
+            $('#ReservationTime').change(function () {
+                var time = $(this).val();
+                if (time) {
+                    var hours = parseInt(time.split(':')[0]);
+                    if (hours < 10 || hours > 22) {
+                        alert('Please select a time between 10:00 AM and 10:00 PM');
+                        $(this).val('');
+                    }
+                }
+            });
+
+            // Form validation and submission
+            $("#reservationForm").submit(function (e) {
+                if ($(this).valid()) {
+                    $("#submitButton")
+                        .prop('disabled', true)
+                        .find('.spinner-border')
+                        .removeClass('d-none');
+                    $("#submitButton")
+                        .contents()
+                        .filter(function () {
+                            return this.nodeType === 3;
+                        })
+                        .replaceWith('Creating...');
+                    return true;
+                }
+                e.preventDefault();
+                // Scroll to first error
+                var firstError = $('.text-danger').not(':empty').first();
+                if (firstError.length) {
+                    $('html, body').animate({
+                        scrollTop: firstError.offset().top - 100
+                    }, 200);
+                }
+                return false;
+            });
+
+            // Clear form handler
+            $('.btn-secondary').click(function () {
+                if ($('#reservationForm').serialize() !== '') {
+                    return confirm('Are you sure you want to leave? Any unsaved changes will be lost.');
+                }
+                return true;
+            });
+        });
+    </script>
+}

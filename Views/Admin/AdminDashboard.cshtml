@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container">
+    <h1>Welcome to the Admin Dashboard</h1>
+    <p>Manage reservations, orders, menu, staff, and reports from this dashboard.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Reservations</h5>
+                    <p class="card-text">View and manage all restaurant reservations.</p>
+                    <a asp-controller="Reservations" asp-action="Index" class="btn btn-primary">View Reservations</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Orders</h5>
+                    <p class="card-text">Manage customer orders and track order status.</p>
+                    <a asp-controller="Orders" asp-action="Index" class="btn btn-primary">View Orders</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Menu Management</h5>
+                    <p class="card-text">Update menu items, prices, and availability.</p>
+                    <a asp-controller="Admin" asp-action="Menu" class="btn btn-primary">Manage Menu</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Staff Management</h5>
+                    <p class="card-text">Manage staff schedules and assignments.</p>
+                    <a asp-controller="Admin" asp-action="Staff" class="btn btn-primary">Manage Staff</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Reports</h5>
+                    <p class="card-text">View sales reports and analytics.</p>
+                    <a asp-controller="Admin" asp-action="Report" class="btn btn-primary">View Reports</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

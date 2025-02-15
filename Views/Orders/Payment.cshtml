@@ -1,0 +1,259 @@
+﻿@model RestaurantSystem.Models.Order
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="d-flex align-items-center mb-4">
+                <a href="@Url.Action("Index", "Orders")" class="text-decoration-none">
+                    <i class="bi bi-arrow-left"></i> Back to Order
+                </a>
+                <h2 class="ms-4 mb-0">Select Payment Method</h2>
+                <span class="ms-auto">Order #@Model.OrderNumber</span>
+            </div>
+
+            <div class="payment-methods">
+                <div class="card mb-3 payment-option" data-method="card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-credit-card fs-4 me-3"></i>
+                            <div>
+                                <h5 class="mb-0">Card Payment</h5>
+                                <small class="text-muted">Pay with credit or debit card</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3 payment-option" data-method="qr">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-qr-code fs-4 me-3"></i>
+                            <div>
+                                <h5 class="mb-0">QR Code Payment</h5>
+                                <small class="text-muted">Scan QR code with your E-wallet</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mb-3 payment-option" data-method="cash">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-cash fs-4 me-3"></i>
+                            <div>
+                                <h5 class="mb-0">Cash Payment</h5>
+                                <small class="text-muted">Pay with cash</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="payment-forms">
+                <div id="card-form" class="payment-form" style="display: none;">
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h5>Card Details</h5>
+                            <div class="mb-3">
+                                <label class="form-label">Card Number</label>
+                                <input type="text" id="card-number" class="form-control" placeholder="0000 0000 0000 0000">
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="form-label">Expiry Date</label>
+                                    <input type="text" id="expiry-date" class="form-control" placeholder="MM/YY">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label">CVV</label>
+                                    <input type="text" id="cvv" class="form-control" placeholder="123">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="qr-form" class="payment-form" style="display: none;">
+                    <div class="card mt-3">
+                        <div class="card-body text-center">
+                            <h5>Scan QR Code</h5>
+                            <div class="qr-code-placeholder my-4">
+                                <img src="/uploads/qr_code.jpg" alt="QR Code" class="img-fluid" style="max-width: 200px; max-height: 200px;">
+                            </div>
+                            <p class="text-muted">Expires in <span id="qr-timer">5:00</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cash-form" class="payment-form" style="display: none;">
+                    <div class="card mt-3">
+                        <div class="card-body">
+                            <h5>Cash Payment</h5>
+                            <div class="mb-3">
+                                <label class="form-label">Amount Received</label>
+                                <input type="number" class="form-control" id="cash-amount" step="0.01">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Amount Due</label>
+                                <input type="text" class="form-control" value="$@Model.Total.ToString("F2")" readonly>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Change</label>
+                                <input type="text" class="form-control" id="change-amount" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Order Summary</h5>
+                </div>
+                <div class="card-body">
+                    @foreach (var item in Model.OrderItems)
+                    {
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>@item.Quantity x @item.MenuItem.Name</span>
+                            <span>$@((item.Quantity * item.UnitPrice).ToString("F2"))</span>
+                        </div>
+                    }
+                    <hr>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Subtotal</span>
+                        <span>$@Model.Subtotal.ToString("F2")</span>
+                    </div>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>Tax (8%)</span>
+                        <span>$@Model.Tax.ToString("F2")</span>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <strong>Total</strong>
+                        <strong>$@Model.Total.ToString("F2")</strong>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button id="confirm-payment" class="btn btn-primary w-100" disabled>
+                        Confirm Payment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.payment-option').click(function () {
+                $('.payment-option').removeClass('selected');
+                $(this).addClass('selected');
+
+                const method = $(this).data('method');
+                $('.payment-form').hide();
+                $(`#${method}-form`).show();
+                $('#confirm-payment').prop('disabled', false);
+            });
+
+            $('#cash-amount').on('input', function () {
+                const cashReceived = parseFloat($(this).val()) || 0;
+                const totalDue = @Html.Raw(Json.Serialize(Model.Total));
+                const change = Math.max(0, cashReceived - totalDue);
+                $('#change-amount').val('$' + change.toFixed(2));
+            });
+
+            $('#confirm-payment').click(function () {
+                if (confirm('Process payment?')) {
+                    processPayment();
+                }
+            });
+        });
+
+        function processPayment() {
+            const method = $('.payment-option.selected').data('method');
+            const orderId = @Model.Id; // Define orderId at the start
+            const data = {
+                orderId: orderId, // Use the defined orderId
+                paymentMethod: method,
+                amount: @Json.Serialize(Model.Total)
+            };
+
+            if (method === 'cash') {
+                data.amountReceived = parseFloat($('#cash-amount').val()) || 0;
+                if (data.amountReceived < data.amount) {
+                    alert('Amount received must be greater than or equal to the total amount.');
+                    $('#confirm-payment').prop('disabled', false).text('Confirm Payment');
+                    return;
+                }
+            } else if (method === 'card') {
+                data.cardNumber = $('#card-number').val();
+                data.expiryDate = $('#expiry-date').val();
+                data.cvv = $('#cvv').val();
+            }
+
+            $('#confirm-payment').prop('disabled', true).html('<span class="spinner-border spinner-border-sm"></span> Processing...');
+
+            $.ajax({
+                url: '/Orders/ProcessPayment',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify(data),
+                success: function (response) {
+                    if (response.success) {
+                        // Stop the processing spinner
+                        $('#confirm-payment').html('Payment Successful');
+
+                        // Show success modal
+                        const modal = $(`
+                            <div class="modal fade" tabindex="-1">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-body text-center py-4">
+                                            <i class="bi bi-check-circle text-success" style="font-size: 3rem;"></i>
+                                            <h4 class="mt-3">Payment Successful!</h4>
+                                            <p class="mb-4">Your payment has been processed successfully.</p>
+                                            <div class="d-grid gap-2">
+                                                <div class="btn-group mb-3">
+                                                    <button class="btn btn-outline-secondary me-2" onclick="printReceipt()">
+                                                        <i class="bi bi-printer"></i> Print Receipt
+                                                    </button>
+                                                    <button class="btn btn-outline-secondary" onclick="emailReceipt()">
+                                                        <i class="bi bi-envelope"></i> Email Receipt
+                                                    </button>
+                                                </div>
+                                                <button class="btn btn-primary" onclick="window.location.href='/Feedback/Create?orderId=${orderId}'">
+                                                    Share Your Feedback
+                                                </button>
+                                                <button class="btn btn-outline-secondary" onclick="window.location.href='/User/Orders'">
+                                                    Skip Feedback
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
+                        modal.modal({ backdrop: 'static', keyboard: false });
+                        modal.modal('show');
+                    } else {
+                        $('#confirm-payment').prop('disabled', false).text('Confirm Payment');
+                        alert(response.message || 'Payment failed. Please try again.');
+                    }
+                },
+                error: function () {
+                    $('#confirm-payment').prop('disabled', false).text('Confirm Payment');
+                    alert('Error processing payment. Please try again.');
+                }
+            });
+        }
+        
+        function printReceipt() {
+            window.print();
+        }
+
+        function emailReceipt() {
+            alert('Receipt will be emailed to the customer.');
+        }
+    </script>
+}

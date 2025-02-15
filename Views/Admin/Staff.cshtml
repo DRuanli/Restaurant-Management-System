@@ -1,0 +1,233 @@
+﻿@model IEnumerable<Staff>
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1>Staff Management</h1>
+            <p class="text-muted">Manage staff and schedules</p>
+        </div>
+        <button class="btn btn-primary" onclick="showAddStaffModal()">
+            <i class="bi bi-plus"></i> Add New Staff
+        </button>
+    </div>
+
+    <!-- Alert Container -->
+    <div id="alertContainer"></div>
+
+    <!-- Staff Statistics -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Total Staff</h5>
+                    <h2 class="total-staff mb-0">@Model.Count()</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Departments</h5>
+                    <div class="departments-stats">
+                        @foreach (var dept in Model.GroupBy(s => s.Department))
+                        {
+                            <div class="d-flex justify-content-between">
+                                <span>@dept.Key</span>
+                                <span>@dept.Count()</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Positions</h5>
+                    <div class="positions-stats">
+                        @foreach (var pos in Model.GroupBy(s => s.Position))
+                        {
+                            <div class="d-flex justify-content-between">
+                                <span>@pos.Key</span>
+                                <span>@pos.Count()</span>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Staff List -->
+    <div class="row g-4" id="staffContainer">
+        @foreach (var staff in Model)
+        {
+            <div class="col-md-4" data-staff-id="@staff.Id">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="@(string.IsNullOrEmpty(staff.ImageUrl) ? "/api/placeholder/48/48" : staff.ImageUrl)"
+                                 class="rounded-circle me-3" style="width: 48px; height: 48px;"
+                                 alt="@staff.Name" />
+                            <div>
+                                <h5 class="card-title mb-0">@staff.Name</h5>
+                                <p class="text-muted small mb-0">@staff.Position</p>
+                            </div>
+                        </div>
+                        <div class="staff-details">
+                            <p><i class="bi bi-envelope"></i> @staff.Email</p>
+                            <p><i class="bi bi-telephone"></i> @staff.Phone</p>
+                            <p><i class="bi bi-building"></i> @staff.Department</p>
+                        </div>
+                        <div class="d-flex justify-content-end mt-3">
+                            <button class="btn btn-sm btn-outline-primary me-2" onclick="editStaff(@staff.Id)">
+                                <i class="bi bi-pencil"></i> Edit
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="deleteStaff(@staff.Id)">
+                                <i class="bi bi-trash"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Staff Modal -->
+<div class="modal fade" id="staffModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add New Staff</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <form id="staffForm">
+                <div class="modal-body">
+                    <input type="hidden" id="staffId" name="id" />
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" name="Name" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" name="Email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" name="Phone" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Position</label>
+                        <select name="Position" class="form-control" required>
+                            <option value="">Select Position</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Chef">Chef</option>
+                            <option value="Waiter">Waiter</option>
+                            <option value="Cashier">Cashier</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Department</label>
+                        <select name="Department" class="form-control" required>
+                            <option value="">Select Department</option>
+                            <option value="Management">Management</option>
+                            <option value="Kitchen">Kitchen</option>
+                            <option value="Service">Service</option>
+                            <option value="Finance">Finance</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Profile Image</label>
+                        <input type="file" name="image" class="form-control" accept="image/*">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save Staff</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#staffForm").submit(function (e) {
+                e.preventDefault();
+                const formData = new FormData(this);
+                const staffId = $("#staffId").val();
+                const url = staffId ? `/Staff/EditStaff/${staffId}` : '/Staff/AddStaff';
+
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response.success) {
+                            $("#staffModal").modal('hide');
+                            location.reload();
+                        } else {
+                            showAlert(response.message || 'Error saving staff', 'danger');
+                        }
+                    },
+                    error: function () {
+                        showAlert('Error processing request', 'danger');
+                    }
+                });
+            });
+        });
+
+        function showAlert(message, type) {
+            const alert = `
+                        <div class="alert alert-${type} alert-dismissible fade show">
+                            ${message}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    `;
+            $("#alertContainer").html(alert);
+        }
+
+        function showAddStaffModal() {
+            $("#staffForm")[0].reset();
+            $("#staffId").val('');
+            $(".modal-title").text('Add New Staff');
+            $("#staffModal").modal('show');
+        }
+
+        function editStaff(id) {
+            $.get(`/Staff/GetStaff/${id}`, function (response) {
+                if (response.success) {
+                    const staff = response.staff;
+                    $("#staffId").val(staff.id);
+                    $("input[name='Name']").val(staff.name);
+                    $("input[name='Email']").val(staff.email);
+                    $("input[name='Phone']").val(staff.phone);
+                    $("select[name='Position']").val(staff.position);
+                    $("select[name='Department']").val(staff.department);
+
+                    $(".modal-title").text('Edit Staff Member');
+                    $("#staffModal").modal('show');
+                } else {
+                    showAlert(response.message || 'Error fetching staff details', 'danger');
+                }
+            });
+        }
+
+        function deleteStaff(id) {
+            if (confirm('Are you sure you want to delete this staff member?')) {
+                $.post(`/Staff/DeleteStaff/${id}`, function (response) {
+                    if (response.success) {
+                        $(`[data-staff-id="${id}"]`).remove();
+                        showAlert('Staff member deleted successfully', 'success');
+                    } else {
+                        showAlert(response.message || 'Error deleting staff member', 'danger');
+                    }
+                });
+            }
+        }
+    </script>
+}

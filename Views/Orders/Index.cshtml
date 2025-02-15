@@ -1,0 +1,232 @@
+﻿@model IEnumerable<RestaurantSystem.Models.MenuItem>
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Orders</h1>
+        @if (ViewBag.Role == "admin")
+        {
+            <a asp-controller="Admin" asp-action="AdminDashboard" class="btn btn-primary">
+                <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
+        }
+        else
+        {
+            <a asp-controller="User" asp-action="UserDashboard" class="btn btn-primary">
+                <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
+        }
+    </div>
+
+    <ul class="nav nav-tabs mb-3">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#menu">Menu</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#current-order">Current Order</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#order-history">Order History</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <!-- Menu Tab -->
+        <div class="tab-pane fade show active" id="menu">
+            <div class="btn-group mb-3">
+                <button type="button" class="btn btn-primary active" data-category="all">All Items</button>
+                @foreach (var category in ViewBag.Categories)
+                {
+                    <button type="button" class="btn btn-primary" data-category="@category">@category</button>
+                }
+            </div>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 mb-4 menu-item" data-category="@item.Category">
+                        <div class="card h-100">
+                            <!-- Add image section -->
+                            <img src="@(string.IsNullOrEmpty(item.ImageUrl) ? "/api/placeholder/400/200" : item.ImageUrl)"
+                                 class="card-img-top"
+                                 alt="@item.Name"
+                                 style="height: 200px; object-fit: cover;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">@item.Name</h5>
+                                <p class="card-text flex-grow-1">@item.Description</p>
+                                <div class="mt-auto">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="card-text mb-0"><strong>$@item.Price.ToString("F2")</strong></p>
+                                        <button class="btn btn-primary add-to-order"
+                                                data-item-id="@item.Id"
+                                                data-item-name="@item.Name"
+                                                data-item-price="@item.Price">
+                                            Add to Order
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Current Order Tab -->
+        <div class="tab-pane fade" id="current-order">
+            <div id="current-order-items">
+                @if (ViewBag.CurrentOrderItems != null)
+                {
+                    <partial name="_CurrentOrder" model="ViewBag.CurrentOrderItems" />
+                }
+                else
+                {
+                    <div class="alert alert-info">
+                        Your order is empty. Add some items from the menu!
+                    </div>
+                }
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-success" id="submit-order">Submit Order</button>
+                <button class="btn btn-secondary" id="save-draft">Save as Draft</button>
+            </div>
+        </div>
+
+        <!-- Order History Tab -->
+        <div class="tab-pane fade" id="order-history">
+            <h3>Order History</h3>
+            <p>Your past orders will appear here.</p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            $('.btn-group .btn').off('click');
+            $('.add-to-order').off('click');
+            $('#submit-order').off('click');
+            $('#save-draft').off('click');
+
+            // Category filter
+            $('.btn-group .btn').click(function () {
+                $('.btn-group .btn').removeClass('active');
+                $(this).addClass('active');
+
+                var category = $(this).data('category');
+                if (category === 'all') {
+                    $('.menu-item').show();
+                } else {
+                    $('.menu-item').hide();
+                    $('.menu-item[data-category="' + category + '"]').show();
+                }
+            });
+
+            // Add to order function
+            $('.add-to-order').click(function () {
+                var itemId = $(this).data('item-id');
+                var itemName = $(this).data('item-name');
+                var itemPrice = $(this).data('item-price');
+
+                $.post('/Orders/AddToOrder', {
+                    menuItemId: itemId,
+                    quantity: 1,
+                    notes: ''
+                })
+                    .done(function (response) {
+                        if (response.success) {
+                            refreshCurrentOrder();
+                            alert('Item added to order!');
+                        } else {
+                            alert('Error: ' + response.message);
+                        }
+                    })
+                    .fail(function () {
+                        alert('Error adding item to order');
+                    });
+            });
+
+            // Submit order function
+            $('#submit-order').click(function () {
+                if (confirm('Are you sure you want to submit this order to the kitchen?')) {
+                    $.ajax({
+                        url: '/Orders/SubmitOrder',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        success: function (response) {
+                            if (response.success) {
+                                window.location.href = response.redirectUrl;
+                            } else {
+                                alert('Error: ' + response.message);
+                            }
+                        },
+                        error: function () {
+                            alert('Error submitting order. Please try again.');
+                        }
+                    });
+                }
+            });
+
+            // Save draft function
+            $('#save-draft').click(function () {
+                $.post('/Orders/SaveDraft')
+                    .done(function (response) {
+                        if (response.success) {
+                            alert('Order saved as draft!');
+                        } else {
+                            alert('Error: ' + response.message);
+                        }
+                    });
+            });
+
+            // Quantity adjustment
+            $(document).on('click', '.increase-quantity', function () {
+                var itemId = $(this).data('item-id');
+                updateQuantity(itemId, 1);
+            });
+
+            $(document).on('click', '.decrease-quantity', function () {
+                var itemId = $(this).data('item-id');
+                updateQuantity(itemId, -1);
+            });
+
+            // Delete item
+            $(document).on('click', '.delete-item', function () {
+                var itemId = $(this).data('item-id');
+                deleteOrderItem(itemId);
+            });
+        });
+
+        function updateQuantity(itemId, change) {
+            $.post('/Orders/UpdateQuantity', {
+                orderItemId: itemId,
+                change: change
+            })
+                .done(function (response) {
+                    if (response.success) {
+                        refreshCurrentOrder();
+                    } else {
+                        alert('Error updating quantity: ' + response.message);
+                    }
+                });
+        }
+
+        function deleteOrderItem(itemId) {
+            $.post('/Orders/DeleteOrderItem', {
+                orderItemId: itemId
+            })
+                .done(function (response) {
+                    if (response.success) {
+                        refreshCurrentOrder();
+                    } else {
+                        alert('Error deleting item: ' + response.message);
+                    }
+                });
+        }
+
+        function refreshCurrentOrder() {
+            $.get('/Orders/GetCurrentOrder', function (data) {
+                $('#current-order-items').html(data);
+            });
+        }
+    </script>
+}

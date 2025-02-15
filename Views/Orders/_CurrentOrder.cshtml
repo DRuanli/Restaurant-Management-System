@@ -1,0 +1,72 @@
+﻿@model IEnumerable<OrderItem>
+
+<div class="current-order-container">
+    @if (Model != null && Model.Any())
+    {
+        <h4>Current Order Items</h4>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Subtotal</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.MenuItem.Name</td>
+                            <td>
+                                <div class="quantity-control">
+                                    <button class="btn btn-outline-secondary decrease-quantity" data-item-id="@item.Id">-</button>
+                                    <span class="quantity-value">@item.Quantity</span>
+                                    <button class="btn btn-outline-secondary increase-quantity" data-item-id="@item.Id">+</button>
+                                </div>
+                            </td>
+                            <td>$@item.UnitPrice.ToString("F2")</td>
+                            <td>$@((item.Quantity * item.UnitPrice).ToString("F2"))</td>
+                            <td>
+                                <button class="btn btn-danger delete-item" data-item-id="@item.Id">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" class="text-end"><strong>Total:</strong></td>
+                        <td colspan="2"><strong>$@Model.Sum(i => i.Quantity * i.UnitPrice).ToString("F2")</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info">
+            Your order is empty. Add some items from the menu!
+        </div>
+    }
+</div>
+
+<style>
+    .quantity-control {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .quantity-value {
+        min-width: 30px;
+        text-align: center;
+    }
+
+    .delete-item {
+        padding: 0.25rem 0.5rem;
+    }
+</style>

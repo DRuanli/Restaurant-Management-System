@@ -1,0 +1,171 @@
+﻿@model RestaurantSystem.Models.Feedback
+
+<style>
+    .star-rating {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .star {
+        cursor: pointer;
+        font-size: 24px;
+        transition: color 0.2s;
+    }
+
+    .rating-group {
+        margin-bottom: 20px;
+    }
+
+        .rating-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+</style>
+<div class="container">
+    <div class="max-w-2xl mx-auto p-4">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center">Share Your Experience</h2>
+                <p class="text-center text-muted">Your feedback helps us improve our service</p>
+            </div>
+            <div class="card-body">
+                <form asp-action="Create" method="post">
+                    <input type="hidden" asp-for="OrderId" value="@ViewBag.OrderId" />
+
+                    <!-- Overall Ratings -->
+                    <div class="mb-4">
+                        <div class="rating-group">
+                            <label>Food Quality</label>
+                            <div class="star-rating" data-rating="5">
+                                <input type="hidden" asp-for="FoodQualityRating" class="rating-value" />
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    <i class="bi bi-star-fill star" data-value="@i"></i>
+                                }
+                                <span class="ms-2 rating-text">5 of 5</span>
+                            </div>
+                        </div>
+
+                        <div class="rating-group">
+                            <label>Service</label>
+                            <div class="star-rating" data-rating="4">
+                                <input type="hidden" asp-for="ServiceRating" class="rating-value" />
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    <i class="bi bi-star-fill star" data-value="@i"></i>
+                                }
+                                <span class="ms-2 rating-text">4 of 5</span>
+                            </div>
+                        </div>
+
+                        <div class="rating-group">
+                            <label>Ambiance</label>
+                            <div class="star-rating" data-rating="5">
+                                <input type="hidden" asp-for="AmbianceRating" class="rating-value" />
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    <i class="bi bi-star-fill star" data-value="@i"></i>
+                                }
+                                <span class="ms-2 rating-text">5 of 5</span>
+                            </div>
+                        </div>
+
+                        <div class="rating-group">
+                            <label>Cleanliness</label>
+                            <div class="star-rating" data-rating="4">
+                                <input type="hidden" asp-for="CleanlinessRating" class="rating-value" />
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    <i class="bi bi-star-fill star" data-value="@i"></i>
+                                }
+                                <span class="ms-2 rating-text">4 of 5</span>
+                            </div>
+                        </div>
+
+                        <div class="rating-group">
+                            <label>Value for Money</label>
+                            <div class="star-rating" data-rating="3">
+                                <input type="hidden" asp-for="ValueForMoneyRating" class="rating-value" />
+                                @for (int i = 1; i <= 5; i++)
+                                {
+                                    <i class="bi bi-star-fill star" data-value="@i"></i>
+                                }
+                                <span class="ms-2 rating-text">3 of 5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dish Ratings -->
+                    <div class="mb-4">
+                        <h5>What Did You Order?</h5>
+                        @foreach (var item in ViewBag.OrderItems)
+                        {
+                            <div class="rating-group">
+                                <label>@item.MenuItem.Name</label>
+                                <div class="star-rating dish-rating" data-menu-item-id="@item.MenuItemId">
+                                    <input type="hidden" name="dishFeedbacks[@item.MenuItemId].MenuItemId" value="@item.MenuItemId" />
+                                    <input type="hidden" name="dishFeedbacks[@item.MenuItemId].Rating" value="0" class="rating-value" />
+                                    @for (int i = 1; i <= 5; i++)
+                                    {
+                                        <i class="bi bi-star star" data-value="@i"></i>
+                                    }
+                                    <span class="ms-2 rating-text">0/5</span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                    <!-- Additional Comments -->
+                    <div class="mb-4">
+                        <label asp-for="Comments">Additional Comments</label>
+                        <textarea asp-for="Comments" class="form-control" rows="4"
+                                  placeholder="Tell us more about your experience..."></textarea>
+                        <span class="text-muted">Minimum 10 characters</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Submit Feedback</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Handle star hover
+            $('.star').hover(
+                function () {
+                    const $stars = $(this).parent().find('.star');
+                    const value = $(this).data('value');
+                    $stars.each(function (index) {
+                        $(this).removeClass('bi-star bi-star-fill')
+                            .addClass(index < value ? 'bi-star-fill text-warning' : 'bi-star');
+                    });
+                },
+                function () {
+                    const $rating = $(this).closest('.star-rating');
+                    const value = parseInt($rating.find('.rating-value').val());
+                    $rating.find('.star').each(function (index) {
+                        $(this).removeClass('bi-star bi-star-fill')
+                            .addClass(index < value ? 'bi-star-fill text-warning' : 'bi-star');
+                    });
+                }
+            );
+
+            // Handle star click
+            $('.star').click(function () {
+                const $rating = $(this).closest('.star-rating');
+                const value = $(this).data('value');
+                $rating.find('.rating-value').val(value);
+                $rating.find('.rating-text').text(value + ' of 5');
+                $rating.find('.star').each(function (index) {
+                    $(this).removeClass('bi-star bi-star-fill')
+                        .addClass(index < value ? 'bi-star-fill text-warning' : 'bi-star');
+                });
+            });
+        });
+    </script>
+}

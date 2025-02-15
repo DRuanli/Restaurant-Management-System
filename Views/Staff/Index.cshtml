@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Staff>
+
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2>Staff Management</h2>
+        <p class="text-muted">Manage your restaurant staff and schedules</p>
+    </div>
+    <button class="btn btn-primary" onclick="showAddStaffModal()">
+        <i class="bi bi-plus"></i> Add New Staff
+    </button>
+</div>
+@{
+    ViewData["Title"] = "Staff Management";
+}
+
+<div id="staffManagement"></div>
+
+@section Scripts {
+    <script>
+        const staffData = @Html.Raw(Json.Serialize(Model));
+    </script>
+}

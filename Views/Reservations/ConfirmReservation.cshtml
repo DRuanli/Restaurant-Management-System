@@ -1,0 +1,87 @@
+﻿@model RestaurantSystem.Models.Reservation
+
+<div class="container">
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h3 class="card-title mb-0">Reservation Confirmed!</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <h4>Thank you for your reservation, @Model.CustomerName!</h4>
+                            <p class="text-muted">A confirmation email has been sent to @Model.Email</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Reservation Details</h5>
+                            <hr />
+                            <dl class="row">
+                                <dt class="col-sm-5">Reservation ID:</dt>
+                                <dd class="col-sm-7">@Model.Id</dd>
+
+                                <dt class="col-sm-5">Date:</dt>
+                                <dd class="col-sm-7">@Model.ReservationDate.ToShortDateString()</dd>
+
+                                <dt class="col-sm-5">Time:</dt>
+                                <dd class="col-sm-7">@Model.ReservationTime.ToString(@"hh\:mm tt")</dd>
+
+                                <dt class="col-sm-5">Number of Guests:</dt>
+                                <dd class="col-sm-7">@Model.NumberOfGuests</dd>
+
+                                <dt class="col-sm-5">Table Number:</dt>
+                                <dd class="col-sm-7">@Model.TableNumber</dd>
+
+                                <dt class="col-sm-5">Status:</dt>
+                                <dd class="col-sm-7">
+                                    <span class="badge bg-warning">@Model.Status</span>
+                                </dd>
+                            </dl>
+                        </div>
+
+                        <div class="col-md-6">
+                            <h5>Contact Information</h5>
+                            <hr />
+                            <dl class="row">
+                                <dt class="col-sm-4">Name:</dt>
+                                <dd class="col-sm-8">@Model.CustomerName</dd>
+
+                                <dt class="col-sm-4">Phone:</dt>
+                                <dd class="col-sm-8">@Model.PhoneNumber</dd>
+
+                                <dt class="col-sm-4">Email:</dt>
+                                <dd class="col-sm-8">@Model.Email</dd>
+
+                                @if (!string.IsNullOrEmpty(Model.SpecialRequests))
+                                {
+                                    <dt class="col-sm-4">Special Requests:</dt>
+                                    <dd class="col-sm-8">@Model.SpecialRequests</dd>
+                                }
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a asp-action="Index" class="btn btn-primary">View All Reservations</a>
+                        <button onclick="window.print()" class="btn btn-outline-secondary">
+                            <i class="bi bi-printer"></i> Print Confirmation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // You can add any JavaScript functionality here
+        $(document).ready(function() {
+        ;
+        });
+    </script>
+}

@@ -1,0 +1,127 @@
+﻿@model IEnumerable<RestaurantSystem.Models.Reservation>
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Reservations</h1>
+        @if (ViewBag.Role == "admin")
+        {
+            <a asp-controller="Admin" asp-action="AdminDashboard" class="btn btn-primary">
+                <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
+        }
+        else
+        {
+            <a asp-controller="User" asp-action="UserDashboard" class="btn btn-primary">
+                <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
+        }
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["SuccessMessage"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="mb-3">
+        <a asp-action="Create" class="btn btn-primary">+ New Reservation</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Customer</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Guests</th>
+                    <th>Table</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CustomerName</td>
+                        <td>@item.ReservationDate.ToShortDateString()</td>
+                        <td>@item.ReservationTime.ToString(@"hh\:mm")</td>
+                        <td>@item.NumberOfGuests</td>
+                        <td>@item.TableNumber</td>
+                        <td>
+                            @if (ViewBag.IsAdmin)
+                            {
+                                @if (item.Status != "Cancelled")
+                                {
+                                    <div class="dropdown">
+                                        <button class="btn btn-sm dropdown-toggle @(item.Status == "Confirmed" ? "btn-success" : "btn-warning")"
+                                                type="button" data-bs-toggle="dropdown">
+                                            @item.Status
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <form asp-action="UpdateStatus" method="post">
+                                                    @Html.AntiForgeryToken()
+                                                    <input type="hidden" name="id" value="@item.Id" />
+                                                    <input type="hidden" name="status" value="Confirmed" />
+                                                    <button type="submit" class="dropdown-item">Confirm</button>
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <form asp-action="UpdateStatus" method="post">
+                                                    @Html.AntiForgeryToken()
+                                                    <input type="hidden" name="id" value="@item.Id" />
+                                                    <input type="hidden" name="status" value="Pending" />
+                                                    <button type="submit" class="dropdown-item">Pending</button>
+                                                </form>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger">@item.Status</span>
+                                }
+                            }
+                            else
+                            {
+                                <span class="badge @(item.Status == "Confirmed" ? "bg-success" :
+                                                   item.Status == "Cancelled" ? "bg-danger" :
+                                                   "bg-warning")">
+                                    @item.Status
+                                </span>
+                            }
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Details</a>
+                                @if (ViewBag.IsAdmin && item.Status != "Cancelled")
+                                {
+                                    <form asp-action="Cancel" asp-route-id="@item.Id" method="post" style="display: inline; margin-left: 5px;">
+                                        @Html.AntiForgeryToken()
+                                        <button type="submit" class="btn btn-danger btn-sm"
+                                                onclick="return confirm('Are you sure you want to cancel this reservation?')">
+                                            Cancel
+                                        </button>
+                                    </form>
+                                }
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Auto-hide success alerts after 5 seconds
+        setTimeout(function () {
+            $('.alert-success').fadeOut('slow');
+        }, 5000);
+    </script>
+}

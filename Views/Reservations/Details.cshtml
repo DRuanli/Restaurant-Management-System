@@ -1,0 +1,76 @@
+﻿@model RestaurantSystem.Models.Reservation
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Reservation Details</h1>
+        @if (ViewBag.Role == "admin")
+        {
+            <a asp-controller="Admin" asp-action="AdminDashboard" class="btn btn-primary">
+                <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
+        }
+        else
+        {
+            <a asp-controller="User" asp-action="UserDashboard" class="btn btn-primary">
+                <i class="bi bi-speedometer2"></i> Dashboard
+            </a>
+        }
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Customer Information</h5>
+            <dl class="row">
+                <dt class="col-sm-3">Customer Name</dt>
+                <dd class="col-sm-9">@Model.CustomerName</dd>
+
+                <dt class="col-sm-3">Phone</dt>
+                <dd class="col-sm-9">@Model.PhoneNumber</dd>
+
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+            </dl>
+
+            <h5 class="card-title mt-4">Reservation Information</h5>
+            <dl class="row">
+                <dt class="col-sm-3">Date</dt>
+                <dd class="col-sm-9">@Model.ReservationDate.ToShortDateString()</dd>
+
+                <dt class="col-sm-3">Time</dt>
+                <dd class="col-sm-9">@Model.ReservationTime.ToString(@"hh\:mm")</dd>
+
+                <dt class="col-sm-3">Number of Guests</dt>
+                <dd class="col-sm-9">@Model.NumberOfGuests</dd>
+
+                <dt class="col-sm-3">Table</dt>
+                <dd class="col-sm-9">@Model.TableNumber</dd>
+
+                <dt class="col-sm-3">Status</dt>
+                <dd class="col-sm-9">
+                    <span class="badge @(Model.Status == "Confirmed" ? "bg-success" :
+                                       Model.Status == "Cancelled" ? "bg-danger" :
+                                       "bg-warning")">
+                        @Model.Status
+                    </span>
+                </dd>
+
+                @if (!string.IsNullOrEmpty(Model.SpecialRequests))
+                {
+                    <dt class="col-sm-3">Special Requests</dt>
+                    <dd class="col-sm-9">@Model.SpecialRequests</dd>
+                }
+            </dl>
+        </div>
+
+        <div class="card-footer">
+            @if (ViewBag.Role == "admin")
+            {
+                <a asp-controller="Reservations" asp-action="Index" class="btn btn-secondary">Back to List</a>
+            }
+            else
+            {
+                <a asp-controller="User" asp-action="Reservations" class="btn btn-secondary">Back to List</a>
+            }
+        </div>
+    </div>
+</div>

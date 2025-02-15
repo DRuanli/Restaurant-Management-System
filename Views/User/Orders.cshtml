@@ -1,0 +1,205 @@
+﻿@model IEnumerable<RestaurantSystem.Models.MenuItem>
+
+<div class="container">
+    <h1>Orders</h1>
+
+    <!-- Navigation Tabs -->
+    <ul class="nav nav-tabs mb-3">
+        <li class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab" href="#menu">Menu</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#current-order">Current Order</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" href="#order-history">Order History</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <!-- Menu Tab -->
+        <div class="tab-pane fade show active" id="menu">
+            <!-- Category Filters -->
+            <div class="btn-group mb-3">
+                <button type="button" class="btn btn-primary active" data-category="all">All Items</button>
+                <button type="button" class="btn btn-primary" data-category="Beverages">Beverages</button>
+                <button type="button" class="btn btn-primary" data-category="Main Course">Main Course</button>
+            </div>
+
+            <!-- Menu Items Grid -->
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-4 mb-4 menu-item" data-category="@item.Category">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">@item.Name</h5>
+                                <p class="card-text">@item.Description</p>
+                                <p class="card-text"><strong>$@item.Price.ToString("F2")</strong></p>
+                                <button class="btn btn-primary add-to-order"
+                                        data-item-id="@item.Id"
+                                        data-item-name="@item.Name"
+                                        data-item-price="@item.Price">
+                                    Add to Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Current Order Tab -->
+        <div class="tab-pane fade" id="current-order">
+            <div id="current-order-items">
+                @if (ViewBag.CurrentOrderItems != null)
+                {
+                    <partial name="_CurrentOrder" model="ViewBag.CurrentOrderItems" />
+                }
+                else
+                {
+                    <div class="alert alert-info">
+                        Your order is empty. Add some items from the menu!
+                    </div>
+                }
+            </div>
+            <div class="mt-3">
+                <button class="btn btn-success" id="submit-order">Submit Order</button>
+                <button class="btn btn-secondary" id="save-draft">Save as Draft</button>
+            </div>
+        </div>
+
+        <!-- Order History Tab -->
+        <div class="tab-pane fade" id="order-history">
+            <h3>Order History</h3>
+            <p>Your past orders will appear here.</p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Category filter
+            $('.btn-group .btn').click(function () {
+                $('.btn-group .btn').removeClass('active');
+                $(this).addClass('active');
+
+                var category = $(this).data('category');
+                if (category === 'all') {
+                    $('.menu-item').show();
+                } else {
+                    $('.menu-item').hide();
+                    $('.menu-item[data-category="' + category + '"]').show();
+                }
+            });
+
+            // Add to order
+            $('.add-to-order').click(function () {
+                var itemId = $(this).data('item-id');
+                var itemName = $(this).data('item-name');
+                var itemPrice = $(this).data('item-price');
+
+                $.post('/Orders/AddToOrder', {
+                    menuItemId: itemId,
+                    quantity: 1,
+                    notes: ''
+                })
+                    .done(function (response) {
+                        if (response.success) {
+                            refreshCurrentOrder();
+                            alert('Item added to order!');
+                        } else {
+                            alert('Error: ' + response.message);
+                        }
+                    })
+                    .fail(function () {
+                        alert('Error adding item to order');
+                    });
+            });
+
+            // Submit order
+            $(document).on('click', '#submit-order', function () {
+                if (confirm('Are you sure you want to submit this order to the kitchen?')) {
+                    $.ajax({
+                        url: '/Orders/SubmitOrder',
+                        type: 'POST',
+                        dataType: 'json',
+                        success: function (response) {
+                            if (response.success) {
+                                window.location.href = response.redirectUrl;
+                            } else {
+                                alert('Error: ' + response.message);
+                            }
+                        },
+                        error: function () {
+                            alert('Error submitting order. Please try again.');
+                        }
+                    });
+                }
+            });
+
+            // Save as draft
+            $(document).on('click', '#save-draft', function () {
+                $.post('/Orders/SaveDraft')
+                    .done(function (response) {
+                        if (response.success) {
+                            alert('Order saved as draft!');
+                        } else {
+                            alert('Error: ' + response.message);
+                        }
+                    });
+            });
+
+            // Quantity adjustment
+            $(document).on('click', '.increase-quantity', function () {
+                var itemId = $(this).data('item-id');
+                updateQuantity(itemId, 1);
+            });
+
+            $(document).on('click', '.decrease-quantity', function () {
+                var itemId = $(this).data('item-id');
+                updateQuantity(itemId, -1);
+            });
+
+            // Delete item
+            $(document).on('click', '.delete-item', function () {
+                var itemId = $(this).data('item-id');
+                deleteOrderItem(itemId);
+            });
+        });
+
+        function updateQuantity(itemId, change) {
+            $.post('/Orders/UpdateQuantity', {
+                orderItemId: itemId,
+                change: change
+            })
+                .done(function (response) {
+                    if (response.success) {
+                        refreshCurrentOrder();
+                    } else {
+                        alert('Error updating quantity: ' + response.message);
+                    }
+                });
+        }
+
+        function deleteOrderItem(itemId) {
+            $.post('/Orders/DeleteOrderItem', {
+                orderItemId: itemId
+            })
+                .done(function (response) {
+                    if (response.success) {
+                        refreshCurrentOrder();
+                    } else {
+                        alert('Error deleting item: ' + response.message);
+                    }
+                });
+        }
+
+        function refreshCurrentOrder() {
+            $.get('/Orders/GetCurrentOrder', function (data) {
+                $('#current-order-items').html(data);
+            });
+        }
+    </script>
+}
